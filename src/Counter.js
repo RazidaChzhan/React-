@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Year from './Year';
+import Time from './Time';
 
 class Counter extends Component {
 
   state = {
     counter: 0,
     date: new Date(),
-    currentYear: ''
+    currentYear: '',
+    currentTime: ''
   }
 
   onClickUp = () => {
@@ -33,6 +35,13 @@ class Counter extends Component {
     });
   };
 
+  onClickTime = () => {
+    this.setState((prevState) => {
+      return {
+        currentTime: this.state.date.toLocaleTimeString(),
+    }
+  });
+  };
 
   render() {
     return (
@@ -44,6 +53,8 @@ class Counter extends Component {
         <hr/>
         <button onClick={this.onClickYear}>Refresh year!</button>
         <Year year={this.state.currentYear} />
+        <button onClick={this.onClickTime}>Refresh time!</button>
+        <Time time={this.state.currentTime} />
       </div>
     );
   }
