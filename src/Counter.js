@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Year from './Year';
 import Time from './Time';
-
+// import createBrowserHistory from 'history/createBrowserHistory';
+// import Navigation from './Navigation';
 
 
 class Counter extends Component {
@@ -9,8 +10,8 @@ class Counter extends Component {
   state = {
     counter: 0,
     date: new Date(),
-    currentYear: '',
-    currentTime: ''
+    // currentYear: '',
+    // currentTime: ''
   }
 
   onClickUp = () => {
@@ -37,13 +38,13 @@ class Counter extends Component {
     });
   };
 
-  onClickTime = () => {
-    this.setState((prevState) => {
-      return {
-        currentTime: this.state.date.toLocaleTimeString(),
-    }
-  });
-  };
+  // onClickTime = () => {
+  //   this.setState((prevState) => {
+  //     return {
+  //       currentTime: this.state.date.toLocaleTimeString(),
+  //   }
+  // });
+  // };
 
   render() {
     return (
@@ -53,10 +54,10 @@ class Counter extends Component {
         <h2>Time is {this.state.date.toLocaleTimeString()}.</h2>
         <button onClick={this.onClickDate}>Refresh current time!</button>
         <hr/>
-        <button onClick={this.onClickYear}>Refresh year!</button>
+        {/* <button onClick={this.onClickYear}>Refresh year!</button>
         <Year year={this.state.currentYear} />
         <button onClick={this.onClickTime}>Refresh time!</button>
-        <Time time={this.state.currentTime} />
+        <Time time={this.state.currentTime} /> */}
       </div>
     );
   }

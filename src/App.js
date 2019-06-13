@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import Year from './Year';
 import Counter from './Counter';
@@ -26,12 +26,15 @@ class Navigation extends React.Component {
       <BrowserRouter history = {History}>
         <div>
           <ul>
-            <li><Link to='/'>Counter</Link></li>
-            <li><Link to='/about'>Current Date</Link></li>
+            <li><NavLink to='/'>Counter</NavLink></li>
+            <li><NavLink to='/about'>Current Date</NavLink></li>
           </ul>
           <hr/>
+          <Switch>
           <Route exact path ='/' component = {Home}/>
-          <Route path ='/about' component = {About}/>
+          <Route path ='/about' component = {Year}/>
+          </Switch>
+          
          
         </div>
         </BrowserRouter>
