@@ -49,6 +49,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
+        <h1>{this.props.title}</h1>
         <h1>{this.state.counter}</h1>
         <button onClick={this.onClickUp}>Click me!</button>
         <h2>Time is {this.state.date.toLocaleTimeString()}.</h2>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Time from './Time';
+import {Helmet} from 'react-helmet';
 
 class Year extends Component {
   state = {
@@ -29,6 +30,10 @@ class Year extends Component {
     console.log('year', this.props.year);
     return (
       <div>
+            <Helmet>
+      <meta charSet="utf-8" />
+      <title>Current Date</title>
+     </Helmet>
         <h3>Year is {this.state.currentYear}.</h3>  
         <button onClick={this.onClickYear}>Refresh year!</button>
         <hr/>

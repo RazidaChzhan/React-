@@ -4,7 +4,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import Year from './Year';
 import Counter from './Counter';
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 const Home = () => (
   <div>
@@ -26,13 +26,13 @@ class Navigation extends React.Component {
       <BrowserRouter history = {History}>
         <div>
           <ul>
-            <li><NavLink to='/'>Counter</NavLink></li>
+            <li><NavLink to='/' >Counter</NavLink></li>
             <li><NavLink to='/about'>Current Date</NavLink></li>
           </ul>
           <hr/>
           <Switch>
-          <Route exact path ='/' component = {Home}/>
-          <Route path ='/about' component = {Year}/>
+          <Route exact path ='/' component = {Home} title="Counter"/>
+          <Route path ='/about' component = {Year} title="Current Date"/>
           </Switch>
           
          

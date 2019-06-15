@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Counter from './Counter';
-import Navigation from './App';
+import Navigation from './Navigation';
 
 ReactDom.render (
   < Navigation/>,
